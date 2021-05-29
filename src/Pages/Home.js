@@ -8,6 +8,7 @@ const Home = (props) => {
   const { value: customersList, setBiddingSortingOrder } = useContext(CustomerDataProviderContext);
 
   const [customers, setCustomers] = useState([]);
+  const [forceRender, setForceRender] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [customersPerPage] = useState(7);
 
@@ -23,6 +24,11 @@ const Home = (props) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // sortData in asc and desc order.
+  // revert the list on select.
+  const customersInAscendingOrderByBidAmount = (e) => {
+    setCustomers(customers.reverse());
+    setForceRender(!forceRender);
+  };
 
   return (
     <Container>
@@ -34,9 +40,9 @@ const Home = (props) => {
             <select
               name="sort table"
               className="border p-1 focus:outline-none dark:bg-gray-500 dark:text-gray-200"
-              onChange={() => null}>
-              <option value="maxbid">Maximum Bid</option>
-              <option value="minbid">Minimum Bid</option>
+              onChange={(e) => customersInAscendingOrderByBidAmount(e.target.value)}>
+              <option value="maxbid">Maximum Bids</option>
+              <option value="minbid">Minimum Bids</option>
             </select>
           </form>
           <div className="flex items-center mr-2">

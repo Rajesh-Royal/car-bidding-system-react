@@ -26,7 +26,7 @@ const Bidder = ({ customer }) => {
           }}
           className=" px-4 py-2 flex space-x-4 items-center">
           <div className="flex items-center">
-            <div className="flex-shrink-0 h-10 w-10">
+            <div className="flex-shrink-0 h-10 w-10 bg-gray-400 rounded-full">
               <img className="h-10 w-10 rounded-full" src={customer.avatarUrl} alt="" />
             </div>
             <div className="ml-4">
