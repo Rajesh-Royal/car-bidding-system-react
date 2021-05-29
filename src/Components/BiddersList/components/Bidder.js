@@ -30,10 +30,10 @@ const Bidder = ({ customer }) => {
               <img className="h-10 w-10 rounded-full" src={customer.avatarUrl} alt="" />
             </div>
             <div className="ml-4">
-              <div className="text-sm font-medium text-gray-900">
+              <div className="text-sm font-medium text-gray-900 dark:text-gray-300">
                 {customer.firstname} {customer.lastname}
               </div>
-              <div className="text-sm text-gray-500">{customer.email}</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">{customer.email}</div>
             </div>
           </div>
         </Link>
@@ -50,10 +50,14 @@ const Bidder = ({ customer }) => {
         )}
       </td>
       <td className="px-6 py-4 whitespace-nowrap">
-        <div className="text-sm text-gray-900">+91 {customer.phone}</div>
+        <div className="text-sm text-gray-900 dark:text-gray-400">+91 {customer.phone}</div>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{customer.email}</td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$ {bid || 0}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+        {customer.email}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+        $ {bid || 0}
+      </td>
     </tr>
   );
 };

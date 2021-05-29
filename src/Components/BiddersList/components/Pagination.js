@@ -16,7 +16,7 @@ const Pagination = ({ customersPerPage, totalCustomers, paginate, currentPage })
               onClick={() => paginate(number)}
               className={`${
                 currentPage === number ? "bg-blue-300 text-gray-50" : null
-              } px-4 rounded-md focus:outline-none`}>
+              } px-4 rounded-md focus:outline-none dark:text-gray-50`}>
               {number}
             </button>
           </li>

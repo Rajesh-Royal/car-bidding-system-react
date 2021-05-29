@@ -10,6 +10,7 @@ input:checked ~ .dot {
 
 .customer-table tbody tr:nth-child(even){
     @apply bg-gray-50;
+    @apply dark:bg-gray-700;
 }
 
 /* scrollbar */

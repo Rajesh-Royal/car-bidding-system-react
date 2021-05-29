@@ -21,9 +21,9 @@ const BidderProfile = (props) => {
         <img
           src={customerProfile?.avatarUrl}
           alt={customerProfile?.firstname}
-          className="rounded-full shadow-md border p-3"
+          className="rounded-full shadow-md border p-3 dark:border-gray-700 dark:shadow-lg"
         />
-        <h2 className="font-medium text-xl">
+        <h2 className="font-medium text-xl dark:text-gray-200">
           {customerProfile?.firstname} {customerProfile?.lastname}
         </h2>
       </div>

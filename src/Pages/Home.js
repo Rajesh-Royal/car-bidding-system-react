@@ -24,17 +24,16 @@ const Home = (props) => {
 
   // sortData in asc and desc order.
 
-  console.log(currentPage);
   return (
     <Container>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center dark:text-gray-200">
         <h2 className="text-center font-medium text-2xl">Bidders List</h2>
         <div className="filters flex space-x-6 items-center">
           <p className="font-medium mr-4">Filters</p>
           <form>
             <select
               name="sort table"
-              className="border p-1 focus:outline-none"
+              className="border p-1 focus:outline-none dark:bg-gray-500 dark:text-gray-200"
               onChange={() => null}>
               <option value="maxbid">Maximum Bid</option>
               <option value="minbid">Minimum Bid</option>
@@ -49,7 +48,7 @@ const Home = (props) => {
                   className="sr-only"
                   onChange={(e) => setBiddingSortingOrder()}
                 />
-                <div className="block bg-gray-600 w-10 h-6 rounded-full"></div>
+                <div className="block bg-gray-600 dark:bg-gray-500 w-10 h-6 rounded-full"></div>
                 <div className="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
               </div>
             </label>
