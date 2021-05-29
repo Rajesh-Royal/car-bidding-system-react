@@ -11,7 +11,7 @@ const BidderProfile = (props) => {
       setCustomerProfile(
         customers?.filter((customer) => customer?.id === props.match.params.userId)[0]
       );
-  }, [customers]);
+  }, [customers, props.match.params?.userId]);
   //   console.log(customerProfile);
   //   console.log(props.match.params.userId);
   //   console.log(props.location.userId);

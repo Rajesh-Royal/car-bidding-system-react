@@ -8,13 +8,13 @@ const Bidder = ({ customer }) => {
   const BidsIncremental = customer.bids.sort((prevBid, nextBid) => nextBid.amount - prevBid.amount);
   useEffect(() => {
     setBid(BidsIncremental[0]?.amount);
-  }, []);
+  }, [BidsIncremental]);
 
   useEffect(() => {
     !sortByMin
       ? setBid(BidsIncremental[0]?.amount)
       : setBid(BidsIncremental[BidsIncremental?.length - 1]?.amount);
-  }, [sortByMin]);
+  }, [BidsIncremental, sortByMin]);
 
   return (
     <tr className="bg-gray-200 border border-blue-300">

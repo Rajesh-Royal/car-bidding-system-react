@@ -2,7 +2,6 @@ import React from "react";
 import { UnixTimestampToLocalDate } from "../../Utils/UnixTimestampToLocalDate";
 
 const ListOfAllBidsByUser = ({ bidsList }) => {
-  console.log(bidsList);
   if (!bidsList) return <p>Loading......</p>;
   return (
     <table className="max-w-4xl mx-auto my-14 table-fixed">
