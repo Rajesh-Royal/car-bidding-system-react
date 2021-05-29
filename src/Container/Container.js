@@ -1,6 +1,6 @@
 import React from "react";
 
-const Container = ({ children, backgroundColor, className }) => {
+const Container = ({ children, backgroundColor = "", className = "" }) => {
   return (
     <div
       className={`max-w-7xl mx-auto main-container p-4 ${className}`}
