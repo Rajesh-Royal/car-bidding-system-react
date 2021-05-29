@@ -17,7 +17,7 @@ const Home = (props) => {
 
   const indexOfLastCustomer = currentPage * customersPerPage;
   const indexOfFirstCustomer = indexOfLastCustomer - customersPerPage;
-  const currentCustomers = customers.slice(indexOfFirstCustomer, indexOfLastCustomer);
+  const currentCustomers = customers?.slice(indexOfFirstCustomer, indexOfLastCustomer);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -61,7 +61,7 @@ const Home = (props) => {
         </div>
         <Pagination
           customersPerPage={customersPerPage}
-          totalCustomers={customers.length}
+          totalCustomers={customers?.length}
           paginate={paginate}
           currentPage={currentPage}
         />
