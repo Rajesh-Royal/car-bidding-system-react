@@ -17,8 +17,8 @@ const Bidder = ({ customer }) => {
   }, [BidsIncremental, sortByMin]);
 
   return (
-    <tr className="bg-gray-200 border border-blue-300">
-      <td>
+    <tr className="bg-gray-200">
+      <td className="border border-blue-300">
         <Link
           to={{
             pathname: `/${customer.firstname}-${customer.lastname}/${customer.id}`,
@@ -31,10 +31,10 @@ const Bidder = ({ customer }) => {
           </p>
         </Link>
       </td>
-      <td className=" px-4 py-2">{customer.email}</td>
-      <td className=" px-4 py-2">{customer.phone}</td>
-      <td className=" px-4 py-2">{customer.hasPremium ? "Yes" : "No"}</td>
-      <td className=" px-4 py-2">{bid || "No Bids"} </td>
+      <td className=" px-4 py-2 border border-blue-300">{customer.email}</td>
+      <td className=" px-4 py-2 border border-blue-300">{customer.phone}</td>
+      <td className=" px-4 py-2 border border-blue-300">{customer.hasPremium ? "Yes" : "No"}</td>
+      <td className=" px-4 py-2 border border-blue-300">{bid || "No Bids"} </td>
     </tr>
   );
 };

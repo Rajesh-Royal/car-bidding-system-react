@@ -6,11 +6,11 @@ export const BiddersList = ({ customersList }) => {
     <table className="table-fixed">
       <thead>
         <tr className="text-left bg-blue-300 border">
-          <th className="px-4 py-2 text-emerald-600 w-1/2">Name</th>
-          <th className="px-4 py-2 text-emerald-600 w-1/5">Email</th>
-          <th className="px-4 py-2 text-emerald-600 w-1/4">Phone</th>
-          <th className="px-4 py-2 text-emerald-600 w-1/4">Premium</th>
-          <th className="px-4 py-2 text-emerald-600 w-1/4">Max/Min bid</th>
+          <th className="px-4 py-2 text-emerald-600 w-1/4 border border-blue-400">Name</th>
+          <th className="px-4 py-2 text-emerald-600 w-1/4 border border-blue-400">Email</th>
+          <th className="px-4 py-2 text-emerald-600 w-1/4 border border-blue-400">Phone</th>
+          <th className="px-4 py-2 text-emerald-600 w-1/4 border border-blue-400">Premium</th>
+          <th className="px-4 py-2 text-emerald-600 w-1/4 border border-blue-400">Max/Min bid</th>
         </tr>
       </thead>
       <tbody>

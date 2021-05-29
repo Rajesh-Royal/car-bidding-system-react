@@ -26,7 +26,7 @@ const Home = (props) => {
     <Container>
       <div className="flex justify-between items-center">
         <h2 className="text-center font-medium text-2xl">Bidders List</h2>
-        <div className="flex items-center mb-2">
+        <div className="flex items-center mb-2 mr-2">
           <label htmlFor="toggleB" className="flex items-center cursor-pointer">
             <div className="relative">
               <input
@@ -38,7 +38,6 @@ const Home = (props) => {
               <div className="block bg-gray-600 w-14 h-8 rounded-full"></div>
               <div className="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
             </div>
-            <div className="ml-3 text-gray-700 font-medium">Sort By Minimum</div>
           </label>
         </div>
       </div>
