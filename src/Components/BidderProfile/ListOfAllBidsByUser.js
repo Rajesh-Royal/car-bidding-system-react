@@ -4,30 +4,43 @@ import { UnixTimestampToLocalDate } from "../../Utils/UnixTimestampToLocalDate";
 const ListOfAllBidsByUser = ({ bidsList }) => {
   if (!bidsList) return <p>Loading......</p>;
   return (
-    <table className="max-w-4xl mx-auto my-14 table-fixed">
-      <thead>
-        <tr className="border border-blue-300 bg-blue-400 text-gray-50">
-          <td className="w-1/4 px-4 py-2 border">Bid Id</td>
-          <td className="w-1/4 px-4 py-2 border">Car Model</td>
-          <td className="w-1/4 px-4 py-2 border">Bid Amount</td>
-          <td className="w-1/4 px-4 py-2 border">Bid Date</td>
-        </tr>
-      </thead>
-      <tbody>
-        {bidsList?.map((bid) => {
-          return (
-            <tr className="bg-gray-200 hover:bg-gray-300" key={bid.id}>
-              <td className=" px-4 py-2 border border-gray-300">{bid.id}</td>
-              <td className=" px-4 py-2  border border-gray-300">{bid.carTitle}</td>
-              <td className=" px-4 py-2 border border-gray-300">{bid.amount}</td>
-              <td className=" px-4 py-2 border border-gray-300">
-                {UnixTimestampToLocalDate(bid.created)}{" "}
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="flex flex-col mt-5">
+      <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"></div>
+      <table className="max-w-4xl mx-auto my-14 divide-gray-200 customer-table shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <thead className="bg-gray-50">
+          <tr className="text-left text-xs font-base text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3">
+              #
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Bid Id
+            </th>
+            <th scope="col" className="px-6 py-3 ">
+              Car Model
+            </th>
+            <th scope="col" className="px-6 py-3 ">
+              Bid Amount
+            </th>
+            <th scope="col" className="px-6 py-3 ">
+              Bid Date
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {bidsList?.map((bid, index) => {
+            return (
+              <tr className="bg-gray-200 text-sm text-gray-500" key={bid.id}>
+                <td className=" px-8 py-4">{index + 1}</td>
+                <td className=" px-8 py-4">{bid.id}</td>
+                <td className=" px-8 py-4">{bid.carTitle}</td>
+                <td className=" px-8 py-4">{bid.amount}</td>
+                <td className=" px-8 py-4">{UnixTimestampToLocalDate(bid.created)} </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

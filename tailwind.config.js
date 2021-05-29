@@ -6,6 +6,9 @@ module.exports = {
       maxWidth: {
         "avatar-size": "2rem",
       },
+      minHeight: {
+        "min-table-height": "75vh",
+      },
     },
   },
   variants: {
