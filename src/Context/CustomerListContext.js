@@ -4,6 +4,7 @@ import { CustomersList } from "../Utils/CustomersLIst";
 export const CustomerDataProviderContext = React.createContext();
 const CustomerDataProvider = ({ children }) => {
   const [customerData, setCustomerData] = useState(null);
+  const [sortByMinimumFirst, setSortByMinimumFirst] = useState(false);
 
   useEffect(() => {
     CustomersList().then((data) => {
@@ -11,22 +12,16 @@ const CustomerDataProvider = ({ children }) => {
     });
   }, []);
 
-  const filterCustomersByMaxBid = () => {
-    setCustomerData((prevCustomers) => {
-      prevCustomers.sort();
-    });
+  const setBiddingSortingOrder = () => {
+    setSortByMinimumFirst(!sortByMinimumFirst);
   };
-  const filterCustomersByMinBid = () => {
-    setCustomerData((prevCustomers) => {
-      prevCustomers.sort((prv, next) => prv.id - next.id);
-    });
-  };
+
   return (
     <CustomerDataProviderContext.Provider
       value={{
         value: customerData,
-        filterCustomersByMaxBid: filterCustomersByMaxBid,
-        filterCustomersByMinBid: filterCustomersByMinBid,
+        sortByMin: sortByMinimumFirst,
+        setBiddingSortingOrder: setBiddingSortingOrder,
       }}>
       {children}
     </CustomerDataProviderContext.Provider>
