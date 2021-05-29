@@ -2,8 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import { BiddersList } from "../Components/BiddersList/BiddersList";
 import Pagination from "../Components/BiddersList/components/Pagination";
 import { CustomerDataProviderContext } from "../Context/CustomerListContext";
+import Container from "../Container/Container";
 
-const Home = () => {
+const Home = (props) => {
   const { value: customersList, setBiddingSortingOrder } = useContext(CustomerDataProviderContext);
 
   const [customers, setCustomers] = useState([]);
@@ -22,7 +23,7 @@ const Home = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <React.Fragment>
+    <Container>
       <div className="flex justify-between items-center">
         <h2 className="text-center font-medium text-2xl">Bidders List</h2>
         <div className="flex items-center mb-2">
@@ -49,7 +50,7 @@ const Home = () => {
           paginate={paginate}
         />
       </div>
-    </React.Fragment>
+    </Container>
   );
 };
 
