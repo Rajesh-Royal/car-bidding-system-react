@@ -8,6 +8,8 @@ import { CustomerDataProviderContext } from "../Context/CustomerListContext";
 const BidderProfile = (props) => {
   const { value: customers } = useContext(CustomerDataProviderContext);
   const [customerProfile, setCustomerProfile] = useState([]);
+
+  // find the customer in global context by Id.
   useEffect(() => {
     if (customers)
       setCustomerProfile(
