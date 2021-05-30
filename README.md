@@ -12,11 +12,7 @@ This project Is bootstrapped with [Create React App](https://github.com/facebook
 
 </div>
 
-<div align="center">
-
-<img alt="Project Preview" src="https://github.com/Rajesh-Royal/car-bidding-system-react/tree/develop/src/assets/images/CarBiddingProjectImage.png">
-
-</div>
+![Project Preview](https://github.com/Rajesh-Royal/car-bidding-system-react/blob/develop/src/assets/images/CarBiddingProjectImage.png)
 
 ## <p>Available Scripts :helicopter:</p>
 
