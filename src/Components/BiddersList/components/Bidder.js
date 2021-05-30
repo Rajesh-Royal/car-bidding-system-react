@@ -21,7 +21,7 @@ const Bidder = ({ customer }) => {
       <td className="px-6 py-4 whitespace-nowrap">
         <Link
           to={{
-            pathname: `/${customer.firstname}-${customer.lastname}/${customer.id}`,
+            pathname: `/dashboard/${customer.firstname}-${customer.lastname}/${customer.id}`,
             userId: customer.id,
           }}
           className=" px-4 py-2 flex space-x-4 items-center">
