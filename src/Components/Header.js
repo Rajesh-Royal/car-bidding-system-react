@@ -29,7 +29,7 @@ function Header() {
         <div className="flex flex-shrink-0 justify-between">
           <button
             type="button"
-            className="hidden mr-1 md:block focus:outline-none"
+            className="mr-1 focus:outline-none"
             onClick={() => {
               history.push("/");
             }}>

@@ -7,14 +7,14 @@ import { PageTitle } from "../Components/Typography/Titles";
 
 const Home = (props) => {
   const { value: customersList, setBiddingSortingOrder } = useContext(CustomerDataProviderContext);
-
   const [customers, setCustomers] = useState([]);
-  const [forceRender, setForceRender] = useState(false);
+  const [selectedOption, setselectedOption] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [customersPerPage] = useState(7);
 
   useEffect(() => {
     if (customersList) setCustomers(customersList);
+    setselectedOption("maxbid");
   }, [customersList]);
 
   const indexOfLastCustomer = currentPage * customersPerPage;
@@ -29,15 +29,21 @@ const Home = (props) => {
   // ToDo: It makes select input wrong when switch screen and came back
   // Add check and according to that update state.
   const customersInAscendingOrderByBidAmount = (e) => {
-    setCustomers(customers.reverse());
-    setForceRender(!forceRender);
+    console.log(e);
+    if (e === "minbid") {
+      setCustomers(customers.reverse());
+      setselectedOption("minbid");
+    } else {
+      setCustomers(customers.reverse());
+      setselectedOption("maxbid");
+    }
   };
 
   return (
     <Container>
       <div className="overflow-auto">
         <PageTitle className="text-center font-medium text-2xl">Bidders List</PageTitle>
-        <div className="flex flex-col items-center justify-between mb-2 px-4 py-2 bg-green-500 rounded-lg shadow-md md:flex-row">
+        <div className="flex flex-col sm:flex-row items-center justify-between mb-2 px-4 py-2 bg-green-500 rounded-lg shadow-md ">
           <p className="text-white font-semibold">Filters</p>
           <div className="filter-container flex items-center space-x-4">
             <form>
@@ -85,4 +91,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default React.memo(Home);

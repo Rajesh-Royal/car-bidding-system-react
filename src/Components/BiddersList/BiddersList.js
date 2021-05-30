@@ -40,16 +40,16 @@ export const BiddersList = ({ customersList }) => {
                   ) : (
                     <React.Fragment>
                       <tr className="text-center animate-pulse">
-                        <td colSpan="5" className="h-16"></td>
+                        <td colSpan="6" className="h-16"></td>
                       </tr>
                       <tr className="text-center animate-pulse">
-                        <td colSpan="5" className="h-16 bg-gray-200"></td>
+                        <td colSpan="6" className="h-16 bg-gray-200"></td>
                       </tr>
                       <tr className="text-center animate-pulse">
-                        <td colSpan="5" className="h-16"></td>
+                        <td colSpan="6" className="h-16"></td>
                       </tr>
                       <tr className="text-center animate-pulse">
-                        <td colSpan="5" className="h-16 bg-gray-200"></td>
+                        <td colSpan="6" className="h-16 bg-gray-200"></td>
                       </tr>
                     </React.Fragment>
                   )}
