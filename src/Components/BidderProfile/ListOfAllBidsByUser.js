@@ -1,11 +1,12 @@
 import React from "react";
 import { UnixTimestampToLocalDate } from "../../Utils/UnixTimestampToLocalDate";
+import ThemedSuspense from "../ThemedSuspense";
 
 const ListOfAllBidsByUser = ({ bidsList }) => {
-  if (!bidsList) return <p>Loading......</p>;
+  if (!bidsList) return <ThemedSuspense />;
   return (
     <div className="flex flex-col mt-5">
-      <div className="shadow overflow-hidden border-b border-gray-200 dark:border-gray-500 sm:rounded-lg"></div>
+      <div className="shadow overflow-hidden border-b border-gray-200 dark:border-gray-500 sm:rounded-lg mx-auto w-1/2"></div>
       <table className="max-w-4xl mx-auto my-8 divide-gray-200 customer-table shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr className="text-left text-xs font-base text-gray-500 dark:text-gray-200 uppercase tracking-wider">

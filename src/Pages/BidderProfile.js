@@ -17,7 +17,7 @@ const BidderProfile = (props) => {
   //   console.log(props.location.userId);
   return (
     <Container>
-      <div className="flex flex-col items-center justify-center space-y-4">
+      <div className="flex flex-col items-center justify-center space-y-4 mt-5">
         <img
           src={customerProfile?.avatarUrl}
           alt={customerProfile?.firstname}
