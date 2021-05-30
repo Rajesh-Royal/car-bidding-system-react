@@ -13,7 +13,7 @@ export const BiddersList = ({ customersList, tableHeadings }) => {
                   <th
                     scope="col"
                     className={`py-3 ${heading === "name" ? "px-12" : "px-6"}`}
-                    key="heading">
+                    key={heading}>
                     {heading}
                   </th>
                 );

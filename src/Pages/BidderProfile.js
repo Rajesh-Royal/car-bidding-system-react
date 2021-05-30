@@ -18,7 +18,6 @@ const BidderProfile = (props) => {
         customers?.filter((customer) => customer?.id === props.match.params.userId)[0]
       );
   }, [customers, props.match.params?.userId]);
-  console.log(customerProfile);
 
   return (
     <Container className="overflow-x-hidden">

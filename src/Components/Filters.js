@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { CustomerDataProviderContext } from "../Context/CustomerListContext";
 
 const Filters = React.memo(({ customersInAscendingOrderByBidAmount, selectedOption }) => {
-  console.log("rendring");
   const { setBiddingSortingOrder } = useContext(CustomerDataProviderContext);
 
   return (
