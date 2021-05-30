@@ -1,20 +1,22 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import BidderProfile from "./Pages/BidderProfile";
-import Home from "./Pages/Home";
-import ThemeSwitcher from "./Utils/ThemeSwitcher";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import AccessibleNavigationAnnouncer from "./Components/AccessibleNavigationAnnouncer";
+import Layout from "./Container/Layout";
+
+function PublicRoute({ component: Component, ...rest }) {
+  return <Route {...rest} render={(props) => <Component {...props} />} />;
+}
 
 function App(props) {
   return (
     <React.Fragment>
-      <BrowserRouter>
+      <Router>
+        <AccessibleNavigationAnnouncer />
         <Switch>
-          <Route path="/:username/:userId" render={(props) => <BidderProfile {...props} />} />
-          <Route path="/" render={(props) => <Home {...props} />} />
-          <Route path="*" render={(props) => <h2>Error 404</h2>} />
+          <PublicRoute path="/" component={Layout} />
         </Switch>
-      </BrowserRouter>
-      <ThemeSwitcher />
+      </Router>
     </React.Fragment>
   );
 }
