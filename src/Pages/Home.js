@@ -4,13 +4,11 @@ import { Helmet } from "react-helmet";
 import { BiddersList } from "../Components/BiddersList/BiddersList";
 import Pagination from "../Components/BiddersList/components/Pagination";
 import { CustomerDataProviderContext } from "../Context/CustomerListContext";
-import Container from "../Container/Container";
 import { PageTitle } from "../Components/Typography/Titles";
-import { Filter } from "react-feather";
 import Filters from "../Components/Filters";
 
-const Home = (props) => {
-  const { value: customersList, setBiddingSortingOrder } = useContext(CustomerDataProviderContext);
+const Home = () => {
+  const { value: customersList } = useContext(CustomerDataProviderContext);
 
   const [customers, setCustomers] = useState([]);
   const [selectedOption, setselectedOption] = useState("maxbid");
@@ -49,17 +47,17 @@ const Home = (props) => {
   );
 
   return (
-    <Container>
+    <React.Fragment>
       <Helmet>
         <title>CarBazaar - Dashboard</title>
       </Helmet>
-      <div className="overflow-auto">
+      <React.Fragment>
         <PageTitle className="text-center font-medium text-2xl">Bidders List</PageTitle>
         <Filters
           customersInAscendingOrderByBidAmount={customersInAscendingOrderByBidAmount}
           selectedOption={selectedOption}
         />
-      </div>
+      </React.Fragment>
       <div className="bidders-list">
         <div className="table-container min-h-min-table-height">
           <BiddersList customersList={currentCustomers} />
@@ -71,7 +69,7 @@ const Home = (props) => {
           currentPage={currentPage}
         />
       </div>
-    </Container>
+    </React.Fragment>
   );
 };
 

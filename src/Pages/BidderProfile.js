@@ -20,7 +20,7 @@ const BidderProfile = (props) => {
   //   console.log(props.match.params.userId);
   //   console.log(props.location.userId);
   return (
-    <Container>
+    <Container className="overflow-x-hidden">
       <Helmet>
         <title>CarBazaar - User Profile</title>
       </Helmet>

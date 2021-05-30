@@ -6,15 +6,15 @@ const Filters = React.memo(({ customersInAscendingOrderByBidAmount, selectedOpti
   const { setBiddingSortingOrder } = useContext(CustomerDataProviderContext);
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between mb-2 px-4 py-2 bg-green-500 rounded-lg shadow-md ">
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between space-y-2 mb-2 px-4 py-2 bg-green-500 rounded-lg shadow-md ">
       <h4 className="text-white font-semibold">Filters</h4>
       <div
-        className="filter-container flex items-center space-x-4"
+        className="filter-container flex items-center space-x-4 justify-between"
         title="Sort customers data in Ascending or descending order">
         <form>
           <select
             name="sort table"
-            className="p-1 focus:outline-none dark:text-gray-200 dark:bg-gray-500 bg-transparent text-white border"
+            className="p-1 focus:outline-none dark:text-gray-200 dark:bg-gray-500 bg-transparent text-white border border-green-500 dark:border-gray-500 shadow-md"
             onChange={(e) => customersInAscendingOrderByBidAmount(e.target.value)}
             value={selectedOption}>
             <option value="maxbid" className="text-gray-400 dark:text-gray-200">
