@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CustomerDataProviderContext } from "../../../Context/CustomerListContext";
 
-const Bidder = ({ customer }) => {
+const Bidder = ({ customer, index }) => {
   const [bid, setBid] = useState(null);
   const { sortByMin } = useContext(CustomerDataProviderContext);
   const BidsIncremental = customer.bids.sort((prevBid, nextBid) => nextBid.amount - prevBid.amount);
@@ -18,6 +18,7 @@ const Bidder = ({ customer }) => {
 
   return (
     <tr key={customer.email} className="hover:shadow-sm">
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">{index}</td>
       <td className="px-6 py-4 whitespace-nowrap">
         <Link
           to={{

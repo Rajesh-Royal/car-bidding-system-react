@@ -1,5 +1,4 @@
 import React from "react";
-import ThemedSuspense from "../ThemedSuspense";
 import Bidder from "./components/Bidder";
 
 export const BiddersList = ({ customersList }) => {
@@ -12,6 +11,9 @@ export const BiddersList = ({ customersList }) => {
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-500 customer-table">
                 <thead className="bg-gray-50 dark:bg-gray-700">
                   <tr className="text-left text-xs font-base text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3">
+                      #
+                    </th>
                     <th scope="col" className="px-12 py-3">
                       Name
                     </th>
@@ -33,7 +35,7 @@ export const BiddersList = ({ customersList }) => {
                   {customersList?.length > 0 ? (
                     customersList?.map((customer, index) => {
                       if (!customer?.firstname) return;
-                      return <Bidder customer={customer} key={customer.id} />;
+                      return <Bidder customer={customer} key={customer.id} index={index} />;
                     })
                   ) : (
                     <React.Fragment>
