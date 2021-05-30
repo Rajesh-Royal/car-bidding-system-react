@@ -25,6 +25,8 @@ const Home = (props) => {
 
   // sortData in asc and desc order.
   // revert the list on select.
+  // ToDo: It makes select input wrong when switch screen and came back
+  // Add check and according to that update state.
   const customersInAscendingOrderByBidAmount = (e) => {
     setCustomers(customers.reverse());
     setForceRender(!forceRender);
