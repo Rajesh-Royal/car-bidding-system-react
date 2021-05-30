@@ -7,6 +7,8 @@ import { CustomerDataProviderContext } from "../Context/CustomerListContext";
 import { PageTitle } from "../Components/Typography/Titles";
 import Filters from "../Components/Filters";
 
+const tableHeadings = ["#", "name", "premium", "phone", "Email", "max/min bid"];
+
 const Home = () => {
   const { value: customersList } = useContext(CustomerDataProviderContext);
 
@@ -59,9 +61,7 @@ const Home = () => {
         />
       </React.Fragment>
       <div className="bidders-list">
-        <div className="table-container min-h-min-table-height">
-          <BiddersList customersList={currentCustomers} />
-        </div>
+        <BiddersList customersList={currentCustomers} tableHeadings={tableHeadings} />
         <Pagination
           customersPerPage={customersPerPage}
           totalCustomers={customers?.length}

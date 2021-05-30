@@ -13,8 +13,8 @@ function Layout() {
   return (
     <React.Fragment>
       <Header />
-      <GlobalErrorBoundary>
-        <Container>
+      <Container>
+        <GlobalErrorBoundary>
           <Suspense fallback={<ThemedSuspense />}>
             <Switch>
               {routes.map((route, i) => {
@@ -31,8 +31,8 @@ function Layout() {
               <Route component={Page404} />
             </Switch>
           </Suspense>
-        </Container>
-      </GlobalErrorBoundary>
+        </GlobalErrorBoundary>
+      </Container>
     </React.Fragment>
   );
 }
