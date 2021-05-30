@@ -6,6 +6,7 @@ import Pagination from "../Components/BiddersList/components/Pagination";
 import { CustomerDataProviderContext } from "../Context/CustomerListContext";
 import { PageTitle } from "../Components/Typography/Titles";
 import Filters from "../Components/Filters";
+import CarBazaarLogo from "../assets/images/car-bidder.png";
 
 const tableHeadings = ["#", "name", "premium", "phone", "Email", "max/min bid"];
 
@@ -54,7 +55,11 @@ const Home = () => {
         <title>CarBazaar - Dashboard</title>
       </Helmet>
       <React.Fragment>
-        <PageTitle className="text-center font-medium text-2xl">Bidders List</PageTitle>
+        <div className="flex justify-between items-center">
+          <PageTitle className="text-center font-medium text-2xl">Bidders List</PageTitle>
+          <img src={CarBazaarLogo} alt="carbazaar logo" className="w-48 h-12 hidden sm:block" />
+        </div>
+
         <Filters
           customersInAscendingOrderByBidAmount={customersInAscendingOrderByBidAmount}
           selectedOption={selectedOption}
