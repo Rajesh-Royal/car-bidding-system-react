@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Moon, Sun } from "react-feather";
+import { GitHub, Moon, Sun } from "react-feather";
 import { useHistory } from "react-router-dom";
 
 function Header() {
@@ -39,6 +39,14 @@ function Header() {
           </button>
         </div>
         <div className="item-center flex flex-shrink-0 justify-between space-x-6">
+          <a
+            href="https://github.com/Rajesh-Royal/car-bidding-system-react"
+            target="_blank"
+            className="focus:shadow-outline-green p-1 rounded-md focus:outline-none"
+            aria-label="github repository link"
+            rel="noreferrer">
+            <GitHub />
+          </a>
           <button
             type="button"
             className="focus:shadow-outline-green p-1 rounded-md focus:outline-none"
@@ -49,9 +57,9 @@ function Header() {
             }}
             aria-label="Toggle color mode">
             {localStorage.bid_Theme === "dark" ? (
-              <Sun className="w-5 h-5" aria-hidden="true" />
+              <Sun aria-hidden="true" />
             ) : (
-              <Moon className="w-5 h-5" aria-hidden="true" />
+              <Moon aria-hidden="true" />
             )}
           </button>
         </div>

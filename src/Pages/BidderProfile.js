@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+
 import ListOfAllBidsByUser from "../Components/BidderProfile/ListOfAllBidsByUser";
 import Container from "../Container/Container";
 import { CustomerDataProviderContext } from "../Context/CustomerListContext";
@@ -17,6 +19,9 @@ const BidderProfile = (props) => {
   //   console.log(props.location.userId);
   return (
     <Container>
+      <Helmet>
+        <title>CarBazaar - User Profile</title>
+      </Helmet>
       <div className="flex flex-col items-center justify-center space-y-4 mt-5">
         <img
           src={customerProfile?.avatarUrl}

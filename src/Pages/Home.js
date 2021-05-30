@@ -1,4 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Helmet } from "react-helmet";
+
 import { BiddersList } from "../Components/BiddersList/BiddersList";
 import Pagination from "../Components/BiddersList/components/Pagination";
 import { CustomerDataProviderContext } from "../Context/CustomerListContext";
@@ -41,6 +43,9 @@ const Home = (props) => {
 
   return (
     <Container>
+      <Helmet>
+        <title>CarBazaar - Dashboard</title>
+      </Helmet>
       <div className="overflow-auto">
         <PageTitle className="text-center font-medium text-2xl">Bidders List</PageTitle>
         <div className="flex flex-col sm:flex-row items-center justify-between mb-2 px-4 py-2 bg-green-500 rounded-lg shadow-md ">
