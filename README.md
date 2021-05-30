@@ -1,4 +1,4 @@
-# <div align="center"> Car bidding web App  ![ ](https://github.com/Rajesh-Royal/car-bidding-system-react/blob/develop/src/assets/images/Car-bidder-logo.png)</div>
+# <div align="center"> Car bidding web App  <img src="https://github.com/Rajesh-Royal/car-bidding-system-react/blob/develop/src/assets/images/Car-bidder-logo.png" width="50"></div>
 
 <div align="center">
 
